@@ -17,6 +17,7 @@
 		A070C6A1160C785600B38BF3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A070C6A0160C785600B38BF3 /* WebKit.framework */; };
 		A070C6A4160C789900B38BF3 /* CKEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = A070C6A3160C788000B38BF3 /* CKEditor.m */; };
 		A070C6AA160C7A5300B38BF3 /* CKUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A070C6A9160C7A5300B38BF3 /* CKUtils.m */; };
+		A070C6DC160CB63300B38BF3 /* NSColor+String.m in Sources */ = {isa = PBXBuildFile; fileRef = A070C6DB160CB63300B38BF3 /* NSColor+String.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,9 @@
 		A070C6A5160C796900B38BF3 /* CKEditorTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKEditorTemplate.h; sourceTree = "<group>"; };
 		A070C6A8160C7A5300B38BF3 /* CKUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKUtils.h; sourceTree = "<group>"; };
 		A070C6A9160C7A5300B38BF3 /* CKUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKUtils.m; sourceTree = "<group>"; };
+		A070C6DA160CB63300B38BF3 /* NSColor+String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+String.h"; sourceTree = "<group>"; };
+		A070C6DB160CB63300B38BF3 /* NSColor+String.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+String.m"; sourceTree = "<group>"; };
+		A070C70B160CC04C00B38BF3 /* osxcolor */ = {isa = PBXFileReference; lastKnownFileType = file; name = osxcolor; path = ckeditor/plugins/osxcolor; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				A070C69E160C784600B38BF3 /* ckeditor */,
+				A070C70A160CC02600B38BF3 /* CKEditor Plugins */,
 				A070C688160C779200B38BF3 /* CKEditor4OSX */,
 				A070C681160C779200B38BF3 /* Frameworks */,
 				A070C67F160C779200B38BF3 /* Products */,
@@ -104,6 +109,8 @@
 				A070C6A8160C7A5300B38BF3 /* CKUtils.h */,
 				A070C6A9160C7A5300B38BF3 /* CKUtils.m */,
 				A070C697160C779200B38BF3 /* MainMenu.xib */,
+				A070C6DA160CB63300B38BF3 /* NSColor+String.h */,
+				A070C6DB160CB63300B38BF3 /* NSColor+String.m */,
 				A070C689160C779200B38BF3 /* Supporting Files */,
 			);
 			path = CKEditor4OSX;
@@ -119,6 +126,14 @@
 				A070C691160C779200B38BF3 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A070C70A160CC02600B38BF3 /* CKEditor Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				A070C70B160CC04C00B38BF3 /* osxcolor */,
+			);
+			name = "CKEditor Plugins";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +204,7 @@
 				A070C696160C779200B38BF3 /* CKAppDelegate.m in Sources */,
 				A070C6A4160C789900B38BF3 /* CKEditor.m in Sources */,
 				A070C6AA160C7A5300B38BF3 /* CKUtils.m in Sources */,
+				A070C6DC160CB63300B38BF3 /* NSColor+String.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

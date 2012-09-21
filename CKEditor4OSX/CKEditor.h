@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSString *data;
 
+- (void) setConfig:(NSString*)config;
+
 @end
