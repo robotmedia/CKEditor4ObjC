@@ -23,7 +23,7 @@ NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
 // liststyle and tabletools are required to disable context menu (see: http://stackoverflow.com/a/12216307/143378 )
             "toolbar : ["
                 "{ name: 'styles', items : [ 'Font', 'FontSize' ] },"
-                "{ name: 'colors', items : [ 'TextColor', 'TextColorOSX' ] },"
+                "{ name: 'colors', items : [ 'TextColorOSX' ] },"
                 "{ name: 'basicstyles', items : [ 'Bold','Italic' ] },"
                 "{ name: 'paragraph', items : [ 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },"
             "],"
