@@ -49,13 +49,6 @@
     return YES;
 }
 
-- (void) changeColor:(id)sender {
-    NSColorPanel *panel = sender;
-    NSString *color = [panel.color hexFromColor];
-    NSString *js = [NSString stringWithFormat:@"osx_setTextColor(CKEDITOR.instances.editor, %@)", color];
-    [self stringByEvaluatingJavaScriptFromString:js];
-}
-
 #pragma mark - Instance
 
 - (NSString*) data {
@@ -70,10 +63,9 @@
 
 - (void) selectTextColor {
     NSColorPanel *panel = [NSColorPanel sharedColorPanel];
-    // Have to use setTarget because changeColor: is not called automatically, even after [self becomeFirstResponder]
-    [panel setTarget:self];
-    [panel setAction:@selector(changeColor:)];
     [panel orderFront:self];
+    // No need to do anything else. Selected text color is changed auto-magically.
+    // TODO: Find out why.
 }
 
 - (void) setConfig:(NSString*)config {
