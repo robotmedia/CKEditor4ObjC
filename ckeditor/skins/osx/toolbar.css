@@ -165,7 +165,6 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 {
     -webkit-border-top-left-radius: 4px; /* new */
     -webkit-border-bottom-left-radius: 4px; /* new */
-    border-radius: 4px 0 0 4px; /* new */
     -webkit-background-clip: padding-box; /* new */
 }
 
@@ -177,7 +176,6 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
     border-right: 1px solid #777; /* new */
     -webkit-border-top-right-radius: 4px; /* new */
     -webkit-border-bottom-right-radius: 4px; /* new */
-    border-radius: 0 4px 4px 0; /* new */
     -webkit-background-clip: padding-box; /* new */
 }
 
