@@ -14,7 +14,7 @@
 
 - (void) setConfig:(NSString*)config;
 
-// WebScripting
+// WebScripting for osxbuttons plugin
 
 - (void) openColorPanel;
 
