@@ -14,4 +14,10 @@
 
 - (void) setConfig:(NSString*)config;
 
+// WebScripting
+
+- (void) openColorPanel;
+
+- (void) openFontPanel;
+
 @end

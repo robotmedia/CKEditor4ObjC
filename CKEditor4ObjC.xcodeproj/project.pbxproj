@@ -43,7 +43,8 @@
 		A070C6A9160C7A5300B38BF3 /* CKUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKUtils.m; sourceTree = "<group>"; };
 		A070C6DA160CB63300B38BF3 /* NSColor+String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+String.h"; sourceTree = "<group>"; };
 		A070C6DB160CB63300B38BF3 /* NSColor+String.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+String.m"; sourceTree = "<group>"; };
-		A070C70B160CC04C00B38BF3 /* osxcolor */ = {isa = PBXFileReference; lastKnownFileType = file; name = osxcolor; path = ckeditor/plugins/osxcolor; sourceTree = "<group>"; };
+		A070C70B160CC04C00B38BF3 /* osxbuttons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = osxbuttons; path = ckeditor/plugins/osxbuttons; sourceTree = "<group>"; };
+		A070C7A7160DF43A00B38BF3 /* osx */ = {isa = PBXFileReference; lastKnownFileType = file; name = osx; path = ckeditor/skins/osx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				A070C69E160C784600B38BF3 /* ckeditor */,
-				A070C70A160CC02600B38BF3 /* CKEditor Plugins */,
+				A070C70A160CC02600B38BF3 /* CKEditor Customizations */,
 				A070C688160C779200B38BF3 /* CKEditor4OSX */,
 				A070C681160C779200B38BF3 /* Frameworks */,
 				A070C67F160C779200B38BF3 /* Products */,
@@ -128,12 +129,29 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A070C70A160CC02600B38BF3 /* CKEditor Plugins */ = {
+		A070C70A160CC02600B38BF3 /* CKEditor Customizations */ = {
 			isa = PBXGroup;
 			children = (
-				A070C70B160CC04C00B38BF3 /* osxcolor */,
+				A070C7A6160DF40F00B38BF3 /* Skins */,
+				A070C7A5160DF40600B38BF3 /* Plugins */,
 			);
-			name = "CKEditor Plugins";
+			name = "CKEditor Customizations";
+			sourceTree = "<group>";
+		};
+		A070C7A5160DF40600B38BF3 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				A070C70B160CC04C00B38BF3 /* osxbuttons */,
+			);
+			name = Plugins;
+			sourceTree = "<group>";
+		};
+		A070C7A6160DF40F00B38BF3 /* Skins */ = {
+			isa = PBXGroup;
+			children = (
+				A070C7A7160DF43A00B38BF3 /* osx */,
+			);
+			name = Skins;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +352,7 @@
 				A070C69B160C779200B38BF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

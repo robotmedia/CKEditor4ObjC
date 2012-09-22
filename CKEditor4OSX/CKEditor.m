@@ -23,11 +23,6 @@
     return self;
 }
 
-- (void) dealloc {
-    // TODO: Is this necessary?
-    [[NSColorPanel sharedColorPanel] setTarget:nil];
-}
-
 #pragma mark - WebFrameLoadDelegate
 
 - (void)webView:(WebView *)sender didClearWindowObject:(WebScriptObject *)windowScriptObject forFrame:(WebFrame *)frame
@@ -39,13 +34,15 @@
 
 + (NSString*)webScriptNameForSelector:(SEL)sel
 {
-    if (sel == @selector(selectTextColor)) return @"selecTextColor";
+    if (sel == @selector(openColorPanel)) return @"openColorPanel";
+    if (sel == @selector(openFontPanel)) return @"openFontPanel";
     return nil;
 }
 
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)sel
 {
-    if(sel == @selector(selectTextColor)) return NO;
+    if(sel == @selector(openColorPanel)) return NO;
+    if(sel == @selector(openFontPanel)) return NO;
     return YES;
 }
 
@@ -55,24 +52,25 @@
     return [self stringByEvaluatingJavaScriptFromString:@"CKEDITOR.instances.editor.getData()"];
 }
 
+- (void) openColorPanel {
+    [[NSColorPanel sharedColorPanel] orderFront:self];
+    // No need to do anything else. Selected text color is changed auto-magically. See: http://stackoverflow.com/questions/12543320/ckeditor-and-nscolorpanel-a-mystery
+}
+
+- (void) openFontPanel {
+    [[NSFontPanel sharedFontPanel] orderFront:self];
+    // No need to do anything else. Selected font is changed auto-magically. See: http://stackoverflow.com/questions/12543320/ckeditor-and-nscolorpanel-a-mystery
+}
+
 - (void) setData:(NSString *)data {
     data = CKEscapeJavaScriptString(data);
     NSString *js = [NSString stringWithFormat:@"CKEDITOR.instances.editor.setData('%@')", data];
     [self stringByEvaluatingJavaScriptFromString:js];
 }
 
-- (void) selectTextColor {
-    NSColorPanel *panel = [NSColorPanel sharedColorPanel];
-    [panel orderFront:self];
-    // No need to do anything else. Selected text color is changed auto-magically.
-    // TODO: Find out why.
-}
-
 - (void) setConfig:(NSString*)config {
     NSString *js = [NSString stringWithFormat:@"CKEDITOR.instances.editor.destroy();CKEDITOR.replace('editor', %@);", config];
     [self stringByEvaluatingJavaScriptFromString:js];
 }
-
-#pragma mark - Private
 
 @end
