@@ -38,13 +38,13 @@
 		A070C6A0160C785600B38BF3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		A070C6A2160C788000B38BF3 /* CKEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKEditor.h; sourceTree = "<group>"; };
 		A070C6A3160C788000B38BF3 /* CKEditor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKEditor.m; sourceTree = "<group>"; };
-		A070C6A5160C796900B38BF3 /* CKEditorTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKEditorTemplate.h; sourceTree = "<group>"; };
 		A070C6A8160C7A5300B38BF3 /* CKUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKUtils.h; sourceTree = "<group>"; };
 		A070C6A9160C7A5300B38BF3 /* CKUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKUtils.m; sourceTree = "<group>"; };
 		A070C6DA160CB63300B38BF3 /* NSColor+String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+String.h"; sourceTree = "<group>"; };
 		A070C6DB160CB63300B38BF3 /* NSColor+String.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+String.m"; sourceTree = "<group>"; };
 		A070C70B160CC04C00B38BF3 /* osxbuttons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = osxbuttons; path = ckeditor/plugins/osxbuttons; sourceTree = "<group>"; };
 		A070C7A7160DF43A00B38BF3 /* osx */ = {isa = PBXFileReference; lastKnownFileType = file; name = osx; path = ckeditor/skins/osx; sourceTree = "<group>"; };
+		A070C7AA160E2BBE00B38BF3 /* config.js */ = {isa = PBXFileReference; lastKnownFileType = file; name = config.js; path = ckeditor/config.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,6 @@
 				A070C695160C779200B38BF3 /* CKAppDelegate.m */,
 				A070C6A2160C788000B38BF3 /* CKEditor.h */,
 				A070C6A3160C788000B38BF3 /* CKEditor.m */,
-				A070C6A5160C796900B38BF3 /* CKEditorTemplate.h */,
 				A070C6A8160C7A5300B38BF3 /* CKUtils.h */,
 				A070C6A9160C7A5300B38BF3 /* CKUtils.m */,
 				A070C697160C779200B38BF3 /* MainMenu.xib */,
@@ -132,6 +131,7 @@
 		A070C70A160CC02600B38BF3 /* CKEditor Customizations */ = {
 			isa = PBXGroup;
 			children = (
+				A070C7A9160E2BAF00B38BF3 /* OS X Config */,
 				A070C7A6160DF40F00B38BF3 /* Skins */,
 				A070C7A5160DF40600B38BF3 /* Plugins */,
 			);
@@ -152,6 +152,14 @@
 				A070C7A7160DF43A00B38BF3 /* osx */,
 			);
 			name = Skins;
+			sourceTree = "<group>";
+		};
+		A070C7A9160E2BAF00B38BF3 /* OS X Config */ = {
+			isa = PBXGroup;
+			children = (
+				A070C7AA160E2BBE00B38BF3 /* config.js */,
+			);
+			name = "OS X Config";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
