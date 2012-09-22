@@ -17,6 +17,7 @@
     if (self = [super initWithFrame:frame frameName:frameName groupName:groupName]) {
         self.frameLoadDelegate = self;
         self.mainFrame.frameView.allowsScrolling = NO;
+        [self setDrawsBackground:NO]; // For osx skin
         NSURL *baseURL = [[NSBundle bundleForClass:self.class] URLForResource:@"ckeditor" withExtension:nil];
         [self.mainFrame loadHTMLString:kCKEditorTemplate baseURL:baseURL];
     }
