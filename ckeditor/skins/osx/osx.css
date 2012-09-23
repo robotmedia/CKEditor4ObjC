@@ -11,6 +11,72 @@
     font-family: 'Lucida Grande',Arial,Helvetica,Tahoma,Verdana,Sans-Serif;
 }
 
+/* toolbar */
+
+.cke_skin_osx .cke_toolgroup
+{
+    -webkit-box-shadow: 0 1px 0 #fff;
+    box-shadow: 0 1px 0 #fff;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+	background-image: none;
+	_background-image: none;
+}
+
+.cke_skin_osx .cke_button a,
+.cke_skin_osx .cke_button a:hover,
+.cke_skin_osx .cke_button a:focus,
+.cke_skin_osx .cke_button a:active,
+.cke_skin_osx .cke_button a.cke_off
+{
+    border-top: 1px solid #777;
+    border-bottom: 1px solid #777;
+    border-left: 1px solid #777;
+    margin: 0;
+    text-shadow: 0 1px 0 #fff;
+    font-size: 12px;
+    background: #eee;
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#fff), to(#ddd)
+    );
+}
+
+.cke_skin_osx .cke_button:first-child a,
+.cke_skin_osx .cke_button:first-child a:hover,
+.cke_skin_osx .cke_button:first-child a:focus,
+.cke_skin_osx .cke_button:first-child a:active,
+.cke_skin_osx .cke_button:first-child a.cke_off
+{
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -webkit-background-clip: padding-box;
+}
+
+.cke_skin_osx .cke_button:last-child a,
+.cke_skin_osx .cke_button:last-child a:hover,
+.cke_skin_osx .cke_button:last-child a:focus,
+.cke_skin_osx .cke_button:last-child a:active,
+.cke_skin_osx .cke_button:last-child a.cke_off {
+    border-right: 1px solid #777;
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-background-clip: padding-box;
+}
+
+.cke_skin_osx .cke_button a.cke_on
+{
+    background: #ccc;
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#ddd), to(#bbb)
+    );
+    text-shadow: 0 1px 0 #eee;
+    -webkit-box-shadow: inset 0 1px 4px #000;
+    box-shadow: inset 0 1px 4px #000;
+}
+
 /* richcombo */
 
 .cke_skin_osx .cke_rcombo .cke_inline_label
