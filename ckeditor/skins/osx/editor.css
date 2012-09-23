@@ -12,6 +12,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 @import url("elementspath.css");
 @import url("icons.css");
 @import url("presets.css");
+@import url("osx.css");
 
 /* Restore the container visibility */
 html .cke_skin_osx

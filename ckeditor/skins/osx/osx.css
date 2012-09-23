@@ -1,0 +1,32 @@
+/* Copyright (c) 2012 Robot Media, S.L. All rights reserved. */
+
+/* reset */
+
+.cke_skin_osx *,
+.cke_skin_osx a:hover,
+.cke_skin_osx a:link,
+.cke_skin_osx a:visited,
+.cke_skin_osx a:active
+{
+    font-family: 'Lucida Grande',Arial,Helvetica,Tahoma,Verdana,Sans-Serif;
+}
+
+/* richcombo */
+
+.cke_skin_osx .cke_rcombo .cke_inline_label
+{
+	font-style: normal;
+	color: black;
+}
+
+/* icons */
+
+.cke_skin_osx .cke_button_osxTextColor .cke_icon
+{
+	background-position: 0 -704px;
+}
+
+.cke_skin_osx .cke_button_osxFont .cke_icon
+{
+	background-position: 0 -704px;
+}

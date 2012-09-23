@@ -3,20 +3,6 @@ Copyright (c) 2003-2012, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 
-/* osxbuttons */
-
-.cke_skin_osx .cke_button_osxTextColor .cke_icon
-{
-	background-position: 0 -704px;
-}
-
-.cke_skin_osx .cke_button_osxFont .cke_icon
-{
-	background-position: 0 -704px;
-}
-
-/* else */
-
 .cke_skin_osx .cke_button_source .cke_icon
 {
 	background-position: 0 0;
