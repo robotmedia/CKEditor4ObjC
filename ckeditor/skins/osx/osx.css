@@ -11,6 +11,16 @@
     font-family: 'Lucida Grande',Arial,Helvetica,Tahoma,Verdana,Sans-Serif;
 }
 
+/* mainui */
+
+.cke_skin_osx .cke_contents
+{
+    border-top: 1px solid #8e8e8e;
+    border-bottom: 1px solid #bebebe;
+    border-left: 1px solid #bebebe;
+    border-right: 1px solid #bebebe;
+}
+
 /* panel */
 
 .cke_skin_osx .cke_panel
