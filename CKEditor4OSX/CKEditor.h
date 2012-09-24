@@ -8,16 +8,30 @@
 
 #import <WebKit/WebKit.h>
 
+@protocol CKEditorDelegate;
+
 @interface CKEditor : WebView
 
+// Wait until instanceReady to set.
 @property (nonatomic, strong) NSString *data;
+
+@property (nonatomic, weak) id<CKEditorDelegate> editorDelegate;
 
 - (void) setConfig:(NSString*)config;
 
-// WebScripting for osxbuttons plugin
+#pragma mark - WebScripting
 
-- (void) openColorPanel;
+- (void) instanceReady;
 
-- (void) openFontPanel;
+- (void) openColorPanel; // for osxbuttons plugin
+
+- (void) openFontPanel; // for osxbuttons plugin
+
+@end
+
+@protocol CKEditorDelegate <NSObject>
+@optional
+
+- (void) instanceReadyInEditor:(CKEditor*)editor;
 
 @end
