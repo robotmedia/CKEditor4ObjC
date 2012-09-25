@@ -71,8 +71,8 @@
 
 .cke_skin_osx .cke_rcombo .cke_openbutton .cke_icon
 {
-	background-image: none;
-	_background-image: none;
+	background-image: url(icon_combo_button.png);
+	background-position: 0;
 }
 
 .cke_panel_grouptitle {
@@ -163,7 +163,7 @@
 .cke_skin_osx a.cke_button_italic.cke_on .cke_icon,
 .cke_skin_osx a.cke_button_underline.cke_on .cke_icon
 {
-    opacity: 0.5; /* TODO: Tint blue */
+	background-image: url(icons_blue.png);
 }
 
 /* richcombo */
@@ -183,5 +183,35 @@
 
 .cke_skin_osx .cke_button_osxFont .cke_icon
 {
-	background-position: 0 -704px;
+    background-image: url(icon_font.png);
+	background-position: 0;
 }
+
+
+@media only screen and (-webkit-device-pixel-ratio: 2) {
+    
+    .cke_skin_osx .cke_button .cke_icon
+    {
+        background-image: url(icons@2x.png);
+        background-size: 16px auto;
+    }
+    
+    .cke_skin_osx .cke_rcombo .cke_openbutton .cke_icon
+    {
+        background-image: url(icon_combo_button@2x.png);
+        background-size: 16px auto;
+    }
+    
+    .cke_skin_osx .cke_button_osxFont .cke_icon {
+        background-image: url(icon_font@2x.png);
+    }
+    
+    .cke_skin_osx a.cke_button_bold.cke_on .cke_icon,
+    .cke_skin_osx a.cke_button_italic.cke_on .cke_icon,
+    .cke_skin_osx a.cke_button_underline.cke_on .cke_icon
+    {
+        background-image: url(icons_blue@2x.png);
+    }
+}
+
+
