@@ -15,7 +15,7 @@
 // Wait until instanceReady to set.
 @property (nonatomic, strong) NSString *data;
 
-@property (nonatomic, weak) IBOutlet id<CKEditorDelegate> editorDelegate;
+@property (nonatomic, assign) IBOutlet id<CKEditorDelegate> editorDelegate;
 
 - (void) setConfig:(NSString*)config;
 
