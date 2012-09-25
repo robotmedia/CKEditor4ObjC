@@ -61,6 +61,8 @@ NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
             [escapedString appendString:@"\\'"];
         } else if (*chars == 0xa) {
             [escapedString appendString:@"\\n"];
+        } else if (*chars == 0xd) {
+            [escapedString appendString:@"\\r"];
         } else {
             [escapedString appendFormat:@"%c", *chars];
         }
