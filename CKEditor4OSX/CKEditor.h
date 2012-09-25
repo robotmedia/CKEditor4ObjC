@@ -17,6 +17,8 @@
 
 @property (nonatomic, assign) IBOutlet id<CKEditorDelegate> editorDelegate;
 
++ (NSString*) escapeJavaScriptString:(NSString*)value;
+
 - (void) setConfig:(NSString*)config;
 
 #pragma mark - WebScripting

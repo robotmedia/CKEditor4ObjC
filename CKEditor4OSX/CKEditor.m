@@ -7,8 +7,6 @@
 //
 
 #import "CKEditor.h"
-#import "CKUtils.h"
-#import "NSColor+String.h"
 
 NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"><html xmlns=\"http://www.w3.org/1999/xhtml\"><head><script type=\"text/javascript\" src=\"ckeditor.js\"></script></head><body><textarea id=\"editor\" name=\"editor\">&nbsp;</textarea><script type=\"text/javascript\"> CKEDITOR.replace('editor', { on : { 'instanceReady': function(evt) { evt.editor.execCommand('maximize'); Cocoa.instanceReady(); }}}); </script></body></html>";
 
@@ -50,6 +48,27 @@ NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
     return YES;
 }
 
+#pragma mark - Class
+
++ (NSString*) escapeJavaScriptString:(NSString*)value {
+    if (!value) return nil;
+    const char *chars = [value UTF8String];
+    NSMutableString *escapedString = [NSMutableString string];
+    while (*chars) {
+        if (*chars == '\\') {
+            [escapedString appendString:@"\\\\"];
+        } else if (*chars == '\'') {
+            [escapedString appendString:@"\\'"];
+        } else if (*chars == 0xa) {
+            [escapedString appendString:@"\\n"];
+        } else {
+            [escapedString appendFormat:@"%c", *chars];
+        }
+        ++chars;
+    }
+    return escapedString;
+}
+
 #pragma mark - Instance
 
 - (NSString*) data {
@@ -73,7 +92,7 @@ NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
 }
 
 - (void) setData:(NSString *)data {
-    data = CKEscapeJavaScriptString(data);
+    data = [CKEditor escapeJavaScriptString:data];
     NSString *js = [NSString stringWithFormat:@"CKEDITOR.instances.editor.setData('%@')", data];
     [self stringByEvaluatingJavaScriptFromString:js];
 }
