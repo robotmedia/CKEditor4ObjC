@@ -40,6 +40,7 @@
         linear, left top, left bottom,
         from(#fff), to(#ddd)
     );
+    height: 22px;
 }
 
 .cke_skin_osx .cke_rcombo .cke_off a:hover .cke_openbutton,
@@ -170,8 +171,29 @@
 
 .cke_skin_osx .cke_rcombo .cke_inline_label
 {
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
 	font-style: normal;
 	color: black;
+    border-left:1px solid #999 !important; /* To avoid blue border on hover of the a container */
+	border-bottom:1px solid #999 !important;
+	border-top:1px solid #999 !important;
+    margin:0;
+    padding:0 2px 0 4px;
+	height: 22px;
+}
+
+.cke_skin_osx .cke_rcombo a,
+.cke_skin_osx .cke_rcombo a:active,
+.cke_skin_osx .cke_rcombo a:hover
+{
+    background-color: white;
+	background-image: none;
+	background-position: 0 -100px;
+    border:none;
+    border-style: none;
+	padding: 0px;
+	height: 22px;
 }
 
 /* icons */
