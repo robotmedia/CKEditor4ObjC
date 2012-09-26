@@ -19,7 +19,10 @@
 
 + (NSString*) escapeJavaScriptString:(NSString*)value;
 
-- (void) setConfig:(NSString*)config;
+// Initialize editor.
+- (void) replaceEditor;
+
+- (void) replaceEditorWithConfig:(NSString*)config;
 
 #pragma mark - WebScripting
 
