@@ -7,9 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-@class CKEditor;
+#import "CKEditor.h"
 
-@interface CKAppDelegate : NSObject <NSApplicationDelegate>
+@interface CKAppDelegate : NSObject <NSApplicationDelegate, CKEditorDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet CKEditor *editor;
