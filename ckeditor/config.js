@@ -6,7 +6,7 @@
 CKEDITOR.editorConfig = function( config )
 {
     config.skin = 'osx';
-    config.extraPlugins = 'osxbuttons';
+    config.extraPlugins = 'onchange,osxbuttons';
     config.toolbarCanCollapse = false;
     config.removePlugins = 'contextmenu, liststyle, tabletools, elementspath, resize'; // liststyle and tabletools are required to disable context menu. See: http://stackoverflow.com/a/12216307/143378
     
@@ -17,5 +17,6 @@ CKEDITOR.editorConfig = function( config )
         { name: 'font', items : [ 'OSXTextColor' ] },
         { name: 'basicstyles', items : [ 'Bold', 'Italic', 'Underline' ] },
         { name: 'paragraph', items : [ 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },
+        { name: 'document', items : [ 'Source' ] },
     ];
 };

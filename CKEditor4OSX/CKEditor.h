@@ -26,6 +26,8 @@
 
 #pragma mark - WebScripting
 
+- (void) dataDidChange;
+
 - (void) instanceReady;
 
 - (void) openColorPanel; // for osxbuttons plugin
@@ -37,6 +39,9 @@
 @protocol CKEditorDelegate <NSObject>
 @optional
 
+- (void) editor:(CKEditor*)editor didChangeData:(NSString*)data;
+
 - (void) instanceReadyInEditor:(CKEditor*)editor;
+
 
 @end

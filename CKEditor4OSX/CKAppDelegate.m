@@ -26,6 +26,10 @@
 
 #pragma mark - CKEditorDelegate
 
+- (void) editor:(CKEditor *)editor didChangeData:(NSString *)data {
+    self.textView.string = data;
+}
+
 - (void) instanceReadyInEditor:(CKEditor *)editor {
     editor.data = @"<b>Hello</b> World!";
 }

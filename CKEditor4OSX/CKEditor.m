@@ -9,7 +9,7 @@
 #import "CKEditor.h"
 
 NSString *kCKEditorDefaultConfig = @"{ on : { 'instanceReady': function(evt) { evt.editor.execCommand('maximize'); Cocoa.instanceReady(); }}}";
-NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"><html xmlns=\"http://www.w3.org/1999/xhtml\"><head><script type=\"text/javascript\" src=\"ckeditor.js\"></script></head><body><textarea id=\"editor\" name=\"editor\">&nbsp;</textarea><script type=\"text/javascript\"> CKEDITOR.replace('editor', %@); </script></body></html>";
+NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"><html xmlns=\"http://www.w3.org/1999/xhtml\"><head><script type=\"text/javascript\" src=\"ckeditor.js\"></script></head><body><textarea id=\"editor\" name=\"editor\">&nbsp;</textarea><script type=\"text/javascript\"> CKEDITOR.on('instanceCreated', function (e) { e.editor.on('change', function (ev) { Cocoa.dataDidChange(); }); }); CKEDITOR.replace('editor', %@); </script></body></html>"; // onchange logic needs to go before CKEditor.replace
 
 @implementation CKEditor {
     BOOL _loaded;
@@ -35,6 +35,7 @@ NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
 
 + (NSString*)webScriptNameForSelector:(SEL)sel
 {
+    if (sel == @selector(dataDidChange)) return @"dataDidChange";
     if (sel == @selector(instanceReady)) return @"instanceReady";
     if (sel == @selector(openColorPanel)) return @"openColorPanel";
     if (sel == @selector(openFontPanel)) return @"openFontPanel";
@@ -43,6 +44,7 @@ NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
 
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)sel
 {
+    if (sel == @selector(dataDidChange)) return NO;
     if (sel == @selector(instanceReady)) return NO;
     if(sel == @selector(openColorPanel)) return NO;
     if(sel == @selector(openFontPanel)) return NO;
@@ -76,6 +78,12 @@ NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
 
 - (NSString*) data {
     return [self stringByEvaluatingJavaScriptFromString:@"CKEDITOR.instances.editor.getData()"];
+}
+
+- (void) dataDidChange {
+    if ([self.editorDelegate respondsToSelector:@selector(editor:didChangeData:)]) {
+        [self.editorDelegate editor:self didChangeData:self.data];
+    }
 }
 
 - (void) instanceReady {

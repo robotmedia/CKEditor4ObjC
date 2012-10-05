@@ -19,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A02F1ED2161F19CA003AC2CF /* onchange */ = {isa = PBXFileReference; lastKnownFileType = file; name = onchange; path = ckeditor/plugins/onchange; sourceTree = "<group>"; };
 		A070C67E160C779200B38BF3 /* CKEditor4OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CKEditor4OSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A070C682160C779200B38BF3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A070C685160C779200B38BF3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -131,6 +132,7 @@
 		A070C7A5160DF40600B38BF3 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				A02F1ED2161F19CA003AC2CF /* onchange */,
 				A070C70B160CC04C00B38BF3 /* osxbuttons */,
 			);
 			name = Plugins;
