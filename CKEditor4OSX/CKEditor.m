@@ -13,6 +13,7 @@ NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
 
 @implementation CKEditor {
     BOOL _loaded;
+    NSString *_previousData;
 }
 
 - (id) initWithFrame:(NSRect)frame frameName:(NSString *)frameName groupName:(NSString *)groupName {
@@ -20,8 +21,21 @@ NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
         self.frameLoadDelegate = self;
         self.mainFrame.frameView.allowsScrolling = NO;
         [self setDrawsBackground:NO]; // For osx skin
+        
+        // NSColorPanel and NSFontPanel changes don't fire dataDidChange so we have to do it manually
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(webViewDidChange:)
+                                                     name:WebViewDidChangeNotification
+                                                   object:self];
+    
     }
     return self;
+}
+
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:NSColorPanelColorDidChangeNotification
+                                                  object:self];
 }
 
 #pragma mark - WebFrameLoadDelegate
@@ -49,6 +63,14 @@ NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
     if(sel == @selector(openColorPanel)) return NO;
     if(sel == @selector(openFontPanel)) return NO;
     return YES;
+}
+
+#pragma mark - NSResponder
+
+- (void) changeFont:(id)sender {
+    if (![self.data isEqualToString:_previousData]) {
+        [self dataDidChange];
+    }
 }
 
 #pragma mark - Class
@@ -81,6 +103,8 @@ NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
 }
 
 - (void) dataDidChange {
+    if ([self.data isEqualToString:_previousData]) return; // Prevent duplicate calls to dataDidChange (in particular keys)
+    _previousData = self.data;
     if ([self.editorDelegate respondsToSelector:@selector(editor:didChangeData:)]) {
         [self.editorDelegate editor:self didChangeData:self.data];
     }
@@ -99,7 +123,7 @@ NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
 
 - (void) openFontPanel {
     [[NSFontPanel sharedFontPanel] orderFront:self];
-    // No need to do anything else. Selected font is changed auto-magically. See: http://stackoverflow.com/questions/12543320/ckeditor-and-nscolorpanel-a-mystery
+    // No need to do anything else. Selected font is changed auto-magically. See: http://stackoverflow.com/questions/12543320/ckeditor-and-nscolorpanel-a-mystery    
 }
 
 - (void) replaceEditor {
@@ -111,7 +135,7 @@ NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
         config = kCKEditorDefaultConfig;
     }
     NSString *html = [NSString stringWithFormat:kCKEditorTemplate, config];
-    NSURL *baseURL = [[NSBundle bundleForClass:self.class] URLForResource:@"ckeditor" withExtension:nil];
+    NSURL *baseURL = [[NSBundle bundleForClass:self.class] URLForResource:@"ckeditor.min" withExtension:nil];
     [self.mainFrame loadHTMLString:html baseURL:baseURL];
 }
 
@@ -119,6 +143,12 @@ NSString *kCKEditorTemplate = @"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
     data = [CKEditor escapeJavaScriptString:data];
     NSString *js = [NSString stringWithFormat:@"CKEDITOR.instances.editor.setData('%@')", data];
     [self stringByEvaluatingJavaScriptFromString:js];
+}
+
+#pragma mark - Private
+
+- (void)webViewDidChange:(NSNotification *)notification {
+    [self dataDidChange];
 }
 
 @end
