@@ -1,0 +1,239 @@
+/* Copyright (c) 2012 Robot Media, S.L. All rights reserved. */
+
+/* reset */
+
+.cke_skin_osx *,
+.cke_skin_osx a:hover,
+.cke_skin_osx a:link,
+.cke_skin_osx a:visited,
+.cke_skin_osx a:active
+{
+    font-family: 'Lucida Grande',Arial,Helvetica,Tahoma,Verdana,Sans-Serif;
+}
+
+/* mainui */
+
+.cke_skin_osx .cke_contents
+{
+    border-top: 1px solid #8e8e8e;
+    border-bottom: 1px solid #bebebe;
+    border-left: 1px solid #bebebe;
+    border-right: 1px solid #bebebe;
+}
+
+/* panel */
+
+.cke_skin_osx .cke_panel
+{
+    box-shadow: 0px 3px 5px 1px #ccc;
+}
+
+.cke_skin_osx .cke_rcombo .cke_openbutton
+{
+    border: 1px solid #777;
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-background-clip: padding-box;
+    margin: 0;
+    background: #eee;
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#fff), to(#ddd)
+    );
+    height: 22px;
+}
+
+.cke_skin_osx .cke_rcombo .cke_off a:hover .cke_openbutton,
+.cke_skin_osx .cke_rcombo .cke_off a:focus .cke_openbutton,
+.cke_skin_osx .cke_rcombo .cke_off a:active .cke_openbutton,
+.cke_skin_osx .cke_rcombo .cke_on .cke_openbutton
+{
+	border-color: #777;
+    background: #ccc;
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#bbb), to(#ddd)
+    );
+}
+
+.cke_skin_osx .cke_rcombo .cke_on .cke_text
+{
+	-moz-border-radius-bottomleft: 0px;
+	-webkit-border-bottom-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+.cke_skin_osx .cke_rcombo .cke_on .cke_openbutton
+{
+	-moz-border-radius-bottomright: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+.cke_skin_osx .cke_rcombo .cke_openbutton .cke_icon
+{
+	background-image: url(icon_combo_button.png);
+	background-position: 0;
+}
+
+.cke_panel_grouptitle {
+    display: none;
+}
+
+/* toolbar */
+
+.cke_skin_osx .cke_toolgroup
+{
+    -webkit-box-shadow: 0 1px 0 #fff;
+    box-shadow: 0 1px 0 #fff;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+	background-image: none;
+	_background-image: none;
+}
+
+.cke_skin_osx .cke_button a,
+.cke_skin_osx .cke_button a:hover,
+.cke_skin_osx .cke_button a:focus,
+.cke_skin_osx .cke_button a:active,
+.cke_skin_osx .cke_button a.cke_off
+{
+    border-top: 1px solid #777;
+    border-bottom: 1px solid #777;
+    border-left: 1px solid #777;
+    margin: 0;
+    text-shadow: 0 1px 0 #fff;
+    font-size: 12px;
+    background: #eee;
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#fff), to(#ddd)
+    );
+}
+
+.cke_skin_osx .cke_button:first-child a,
+.cke_skin_osx .cke_button:first-child a:hover,
+.cke_skin_osx .cke_button:first-child a:focus,
+.cke_skin_osx .cke_button:first-child a:active,
+.cke_skin_osx .cke_button:first-child a.cke_off
+{
+    border-left: 1px solid #777;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -webkit-background-clip: padding-box;
+}
+
+.cke_skin_osx .cke_button:last-child a,
+.cke_skin_osx .cke_button:last-child a:hover,
+.cke_skin_osx .cke_button:last-child a:focus,
+.cke_skin_osx .cke_button:last-child a:active,
+.cke_skin_osx .cke_button:last-child a.cke_off {
+    border-right: 1px solid #777;
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-background-clip: padding-box;
+}
+
+.cke_skin_osx .cke_button a.cke_on
+{
+    background: #ccc;
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#ddd), to(#bbb)
+    );
+    text-shadow: 0 1px 0 #eee;
+    -webkit-box-shadow: inset 0 1px 4px #000;
+    box-shadow: inset 0 1px 4px #000;
+}
+
+.cke_skin_osx a.cke_button_bold.cke_on,
+.cke_skin_osx a.cke_button_italic.cke_on,
+.cke_skin_osx a.cke_button_underline.cke_on
+{
+    background: #eee;
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#fff), to(#ddd)
+    );
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.cke_skin_osx a.cke_button_bold.cke_on .cke_icon,
+.cke_skin_osx a.cke_button_italic.cke_on .cke_icon,
+.cke_skin_osx a.cke_button_underline.cke_on .cke_icon
+{
+	background-image: url(icons_blue.png);
+}
+
+/* richcombo */
+
+.cke_skin_osx .cke_rcombo .cke_inline_label
+{
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+	font-style: normal;
+	color: black;
+    border-left:1px solid #999 !important; /* To avoid blue border on hover of the a container */
+	border-bottom:1px solid #999 !important;
+	border-top:1px solid #999 !important;
+    margin:0;
+    padding:0 2px 0 4px;
+	height: 22px;
+}
+
+.cke_skin_osx .cke_rcombo a,
+.cke_skin_osx .cke_rcombo a:active,
+.cke_skin_osx .cke_rcombo a:hover
+{
+    background-color: white;
+	background-image: none;
+	background-position: 0 -100px;
+    border:none;
+    border-style: none;
+	padding: 0px;
+	height: 22px;
+}
+
+/* icons */
+
+.cke_skin_osx .cke_button_osxTextColor .cke_icon
+{
+	background-position: 0 -704px;
+}
+
+.cke_skin_osx .cke_button_osxFont .cke_icon
+{
+    background-image: url(icon_font.png);
+	background-position: 0;
+}
+
+
+@media only screen and (-webkit-device-pixel-ratio: 2) {
+    
+    .cke_skin_osx .cke_button .cke_icon
+    {
+        background-image: url(icons@2x.png);
+        background-size: 16px auto;
+    }
+    
+    .cke_skin_osx .cke_rcombo .cke_openbutton .cke_icon
+    {
+        background-image: url(icon_combo_button@2x.png);
+        background-size: 16px auto;
+    }
+    
+    .cke_skin_osx .cke_button_osxFont .cke_icon {
+        background-image: url(icon_font@2x.png);
+    }
+    
+    .cke_skin_osx a.cke_button_bold.cke_on .cke_icon,
+    .cke_skin_osx a.cke_button_italic.cke_on .cke_icon,
+    .cke_skin_osx a.cke_button_underline.cke_on .cke_icon
+    {
+        background-image: url(icons_blue@2x.png);
+    }
+}
+
+
