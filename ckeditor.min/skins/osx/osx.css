@@ -13,6 +13,11 @@
 
 /* mainui */
 
+span.cke_skin_osx
+{
+    border: none; // Needed for OS X 10.7
+}
+
 .cke_skin_osx .cke_contents
 {
     border-top: 1px solid #8e8e8e;
